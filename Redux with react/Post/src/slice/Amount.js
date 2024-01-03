@@ -1,20 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
  const initialState= {
     id: 1,
-    amount: 10
+    amount: 10,
 }
 export const amountSlice = createSlice({
-    name: 'amount',
+    name: 'ammount',
     initialState,
     reducers: {
          increament: (state, action)=>{
-                  return state.amount = state.amount + 1;
+                   state.amount += 1;
          },
          decreament: (state, action)=>{
-            return state.amount = state.amount -1;
+             state.amount -= 1;
          },
          decreamentByValue: (state, action)=>{
-            return state.amount = state.amount + action.payload
+             state.amount = state.amount + action.payload
          },
     },
 })
