@@ -3,7 +3,7 @@ import { createAction } from "@reduxjs/toolkit";
 
 
 
-const conditionInc = createAction('bonus/decreamentByAmount')
+const conditionInc = createAction('ammount/decreamentByValue')
  const initialState= {
     id: 1,
     bonus: 11
@@ -14,15 +14,13 @@ export const bonusSlice = createSlice({
     reducers: {
          increament: (state, action)=>{
                    state.bonus += 1;
-         },
-        
+         },        
     },
-
-   
- 
-    extraReducers: ()=>{
+    extraReducers: (builder)=>{
         builder.addCase(conditionInc, (state, action)=>{
-            state.bonus += action.payloaed
+            if (action.payload > 100) {
+                state.bonus += 1
+            }
         })
     }
 })
