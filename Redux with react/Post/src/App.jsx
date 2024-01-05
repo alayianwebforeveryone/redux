@@ -3,6 +3,7 @@ import './App.css'
 import Form from './Components/form'
 import Bonus from './Components/Bonus'
 import { useSelector } from 'react-redux'
+import HookForm from './slice/hook form/HookForm'
 
 function App() {
   const Amount = useSelector((state) => state.account.amount)
@@ -20,6 +21,7 @@ function App() {
       </div>
       <Form />
       <Bonus />
+      < HookForm/>
     </>
 
   )
